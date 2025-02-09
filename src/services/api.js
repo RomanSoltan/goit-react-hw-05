@@ -21,19 +21,53 @@ export const fetchTrendMovies = async () => {
 
     return results;
   } catch (error) {
-    console.error('Error fetching images:', error);
-    throw new Error('Could not fetch images');
+    console.error('Error fetching movies:', error);
+    throw new Error('Could not fetch movies');
+  }
+};
+
+export const fetchSearchMovies = async () => {
+  try {
+    const { data } = await axios.get(`search/movie`, options);
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error('Error serching movies:', error);
+    throw new Error('Could not serch movies');
   }
 };
 
 export const fetchMoviesById = async movieId => {
   try {
     const { data } = await axios.get(`movie/${movieId}`, options);
-    console.log(data);
-
     return data;
   } catch (error) {
-    console.error('Error fetching images:', error);
-    throw new Error('Could not fetch images');
+    console.error('Error fetching image:', error);
+    throw new Error('Could not fetch image');
+  }
+};
+
+export const fetchCastsById = async movieId => {
+  try {
+    const {
+      data: { cast },
+    } = await axios.get(`movie/${movieId}/credits`, options);
+    return cast;
+  } catch (error) {
+    console.error('Error fetching cast:', error);
+    throw new Error('Could not fetch cast');
+  }
+};
+
+export const fetchReviewsById = async movieId => {
+  try {
+    const {
+      data: { results },
+    } = await axios.get(`movie/${movieId}/reviews`, options);
+
+    return results;
+  } catch (error) {
+    console.error('Error fetching reviews:', error);
+    throw new Error('Could not fetch reviews');
   }
 };

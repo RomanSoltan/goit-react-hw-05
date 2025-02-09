@@ -1,0 +1,27 @@
+img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.castInfo {
+  padding: 15px;
+}
+.castInfo h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #000;
+}
+
+.castInfo p {
+  margin: 5px 0;
+  font-size: 1.2em;
+  color: #777;
+}
+
+.castInfo span {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
