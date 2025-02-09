@@ -1,0 +1,15 @@
+.movieInfo {
+  padding: 15px;
+}
+
+.movieInfo h2 {
+  margin: 0;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.movieInfo p {
+  margin: 5px 0;
+  font-size: 1.2em;
+  color: #777;
+}

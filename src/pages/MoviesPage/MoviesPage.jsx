@@ -1,4 +1,10 @@
+import SearchBox from '../../components/SearchBox/SearchBox';
+
 const MoviesPage = () => {
-  return <div></div>;
+  return (
+    <div>
+      <SearchBox />
+    </div>
+  );
 };
 export default MoviesPage;
