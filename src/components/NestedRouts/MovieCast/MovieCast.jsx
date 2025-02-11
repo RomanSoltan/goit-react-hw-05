@@ -7,14 +7,35 @@ import s from './MovieCast.module.css';
 const MovieCast = () => {
   const { movieId } = useParams();
   const [casts, setCasts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
-      const data = await fetchCastsById(movieId);
-      setCasts(data);
+      try {
+        setLoading(true);
+        const data = await fetchCastsById(movieId);
+        setCasts(data);
+      } catch {
+        setError('Failed to load cast data');
+      } finally {
+        setLoading(false);
+      }
     };
     getData();
   }, [movieId]);
+
+  if (loading) {
+    return <p>Loading cast...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+  if (!casts.length) {
+    return <p>No cast available for this movie.</p>;
+  }
 
   return (
     <div>

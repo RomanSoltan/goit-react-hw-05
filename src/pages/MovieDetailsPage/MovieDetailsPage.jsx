@@ -4,6 +4,7 @@ import { fetchMoviesById } from '../../services/api';
 import GoBackLink from '../../components/GoBackLink/GoBackLink';
 import s from './MovieDetailsPage.module.css';
 import clsx from 'clsx';
+import Loader from '../../components/Loader/Loader';
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);
@@ -26,7 +27,7 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   if (!movie) {
-    return <h2>Loading...</h2>;
+    return <Loader />;
   }
 
   const {
@@ -41,7 +42,7 @@ const MovieDetailsPage = () => {
 
   return (
     <section>
-      <GoBackLink to={backLinkHref.current}>Back to Trend Movies</GoBackLink>
+      <GoBackLink to={backLinkHref.current}>Back to Movies</GoBackLink>
       <div className={s.inner}>
         <img
           className={s.img}

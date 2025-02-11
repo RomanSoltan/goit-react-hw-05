@@ -31,6 +31,9 @@
   margin-bottom: 12px;
 }
 
+.moreInfoTitle {
+  text-align: center;
+}
 .title {
   font-size: 48px;
   margin-bottom: 12px;
@@ -38,6 +41,7 @@
 
 .nav {
   display: flex;
+  justify-content: center;
   margin-bottom: 24px;
 }
 

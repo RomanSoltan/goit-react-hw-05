@@ -1,4 +1,4 @@
-.wrapper {
+.form {
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -7,14 +7,52 @@
 }
 
 .input {
+  width: 300px;
   padding: 8px 32px 8px 8px;
   border-radius: 4px;
   font: inherit;
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+.input:focus {
+  border: 1px solid orangered;
 }
 
 .icon {
   width: 20px;
   height: 20px;
   position: absolute;
-  right: 6px;
+  right: 132px;
+  color: orangered;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: black;
+  font-weight: 600;
+  background-color: transparent;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1),
+    transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn:hover,
+.btn:focus {
+  color: white;
+  background-color: orangered;
+  transform: scale(1.05);
+}
+
+.btn:disabled {
+  background-color: lightgray;
+  color: black;
+  transform: scale(1);
 }

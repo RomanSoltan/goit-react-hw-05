@@ -3,3 +3,10 @@
   text-align: center;
   margin-bottom: 24px;
 }
+
+.error {
+  color: red;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+}

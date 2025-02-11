@@ -1,7 +1,26 @@
+.noReviews {
+  font-size: 18px;
+  color: #e74c3c; /* Червоний колір для повідомлення про відсутність */
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+  background-color: #f8d7da; /* Легкий фон для виділення */
+  border: 1px solid #e74c3c; /* Червона рамка */
+  border-radius: 5px;
+}
+
 .title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
   font-size: 18px;
   margin-bottom: 12px;
 }
 
 .descr {
+  font-size: 16px;
+  color: #666;
 }

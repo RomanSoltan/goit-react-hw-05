@@ -9,7 +9,11 @@ const MovieList = ({ movies }) => {
     <ul className={s.list}>
       {movies.map(movie => (
         <li className={s.card} key={movie.id}>
-          <Link to={`/movies/${movie.id}`} state={location}>
+          <Link
+            to={`/movies/${movie.id}`}
+            state={location}
+            aria-label={`Go to details of movie: ${movie.title}`}
+          >
             <MoviesCard movie={movie} />
           </Link>
         </li>

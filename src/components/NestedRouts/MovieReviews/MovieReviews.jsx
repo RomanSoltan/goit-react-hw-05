@@ -7,14 +7,35 @@ import s from './MovieReviews.module.css';
 const MovieReviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
-      const data = await fetchReviewsById(movieId);
-      setReviews(data);
+      try {
+        setLoading(true);
+        const data = await fetchReviewsById(movieId);
+        setReviews(data);
+      } catch {
+        setError('Failed to load reviews');
+      } finally {
+        setLoading(false);
+      }
     };
     getData();
   }, [movieId]);
+
+  if (loading) {
+    return <p className={s.loading}>Loading reviews...</p>;
+  }
+
+  if (error) {
+    return <p className={s.error}>{error}</p>;
+  }
+
+  if (!reviews.length) {
+    return <p className={s.noReviews}>No reviews available for this movie.</p>;
+  }
 
   return (
     <ul>

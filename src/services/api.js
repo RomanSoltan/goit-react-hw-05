@@ -26,11 +26,16 @@ export const fetchTrendMovies = async () => {
   }
 };
 
-export const fetchSearchMovies = async () => {
+export const fetchSearchMovies = async searchQuery => {
   try {
-    const { data } = await axios.get(`search/movie`, options);
-    console.log(data);
-    return data;
+    const {
+      data: { results },
+    } = await axios.get('search/movie', {
+      ...options,
+      params: { query: searchQuery },
+    });
+
+    return results;
   } catch (error) {
     console.error('Error serching movies:', error);
     throw new Error('Could not serch movies');
